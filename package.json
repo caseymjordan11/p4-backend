@@ -18,10 +18,12 @@
   },
   "homepage": "https://github.com/caseymjordan11/p4-backend#readme",
   "dependencies": {
+    "axios": "^0.17.1",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.2",
     "method-override": "^2.3.10",
-    "mongoose": "^4.13.7"
+    "mongoose": "^4.13.7",
+    "yelp-fusion": "^2.0.3"
   }
 }
