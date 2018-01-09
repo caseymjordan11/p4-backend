@@ -12,6 +12,8 @@ app.use(cors())
 
 const yelp = require('yelp-fusion')
 const client = yelp.client("abQe6754VP9zrHoU-NslnDZHixG7a_Oft_MCEwIAu0zoI65s5PA2X_BwbGUsVYee0Q9krQOOE_6RI6kbFemDC_yFx2KkWUCsJsAZQ9F5ca8pOYdGk55_C6fEZFRSWnYx")
+const googleKey = "AIzaSyCBmRKMME2_cxueT5MwzaHTawrMSAM7z1o"
+
 
 app.get("/api/yelp/:cuisine/:lng/:lat/:priceLevel", (req,res) => {
   client.search({
@@ -29,6 +31,20 @@ app.get("/api/yelp/:cuisine/:lng/:lat/:priceLevel", (req,res) => {
   .catch(err => {
     console.log(err)
   })
+})
+
+app.get("/api/google/:street/:city/:state/:zipcode", (req,res) => {
+  axios
+    .get(
+      `https://maps.googleapis.com/maps/api/geocode/json?address=${req.params.street},${req.params.city},${req.params.state},${req.params.zipcode}&key=${googleKey}`,
+      {}
+    )
+    .then(data => {
+      res.json(data2)
+    })
+    .catch(err => {
+      console.log(err)
+    })
 })
 
 
