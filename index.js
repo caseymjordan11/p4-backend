@@ -14,13 +14,14 @@ const yelp = require('yelp-fusion')
 const client = yelp.client("abQe6754VP9zrHoU-NslnDZHixG7a_Oft_MCEwIAu0zoI65s5PA2X_BwbGUsVYee0Q9krQOOE_6RI6kbFemDC_yFx2KkWUCsJsAZQ9F5ca8pOYdGk55_C6fEZFRSWnYx")
 
 
-app.get("/api/yelp/:cuisine/:location/:priceLevel", (req,res) => {
+app.get("/api/yelp/:cuisine/:lat/:lng/:priceLevel", (req,res) => {
   client.search({
     term: req.params.cuisine,
-    location: req.params.location,
+    latitude: req.params.lat,
+    longitude: req.params.lng,
     price: req.params.priceLevel,
-    radius: "10000",
-    limit: "50"
+    radius: "5000",
+    limit: "20"
   })
   .then(data => {
     console.log(data)
