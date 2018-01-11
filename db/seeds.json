@@ -1,12 +1,10 @@
 [
   {
-    "date":"1-7-18",
-    "date":"Sunday",
-    "time":"5pm",
-    "cuisine":"Burgers",
-    "delivery":"No",
-    "priceLevel":"$$",
-    "acceptedRec":"Yes",
-    "restaurant":"Shake Shack"
+    "name": "Shake Shack",
+    "food": "Burger",
+    "rating": "3.8",
+    "city": "DC",
+    "phone": "5555555555",
+    "url": "urlgoeshere.com"
   }
 ]

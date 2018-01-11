@@ -1,8 +1,10 @@
 const express = require("express")
 const parser = require("body-parser")
 const cors = require("cors")
-const { Rec } = require("./db/schema.js")
 const axios = require("axios")
+const mongoose = require('./db/schema.js')
+
+const Rec = mongoose.model('Rec')
 
 const app = express()
 
@@ -26,6 +28,17 @@ app.get("/api/yelp/:cuisine/:lat/:lng/:priceLevel", (req,res) => {
   .then(data => {
     console.log(data)
     res.json(data)
+  })
+  .catch(err => {
+    console.log(err)
+  })
+})
+
+
+app.post("/api/save", (req,res) => {
+  Rec.create(req.body)
+  .then((rec) => {
+    res.json(rec)
   })
   .catch(err => {
     console.log(err)
