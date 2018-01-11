@@ -34,6 +34,15 @@ app.get("/api/yelp/:cuisine/:lat/:lng/:priceLevel", (req,res) => {
   })
 })
 
+app.get("/api/rec", (req, res) => {
+  Rec.find()
+    .then((recs) => {
+      res.json(recs)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+})
 
 app.post("/api/save", (req,res) => {
   Rec.create(req.body)
