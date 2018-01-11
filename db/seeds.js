@@ -1,5 +1,6 @@
- const { Rec } = require("./schema.js")
  const seedData = require("./seeds.json")
+ const mongoose = require('./schema.js')
+ const Rec = mongoose.model('Rec')
 
  Rec.remove({}).then(() => {
    seedData.forEach(data => {

@@ -1,10 +1,10 @@
 [
   {
-    "name": "Shake Shack",
-    "food": "Burger",
-    "rating": "3.8",
+    "name": "Test Rest",
+    "food": "Desert",
+    "rating": "2.2",
     "city": "DC",
-    "phone": "5555555555",
-    "url": "urlgoeshere.com"
+    "phone": "6667776565",
+    "url": "url.com"
   }
 ]

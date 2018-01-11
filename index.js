@@ -34,8 +34,8 @@ app.get("/api/yelp/:cuisine/:lat/:lng/:priceLevel", (req,res) => {
   })
 })
 
-app.get("/api/rec", (req, res) => {
-  Rec.find()
+app.get("/api/rec/:food", (req, res) => {
+  Rec.find({food: req.params.food})
     .then((recs) => {
       res.json(recs)
     })
